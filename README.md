@@ -38,7 +38,7 @@ Configurando o pgadmin4:
 Associando ao postgresSQL: 
 
 
-![imagem Local](imagem_readme/cmd_criando_postgres.png)
+![imagem Local](imagem_readme/conectando_ao_DB.png)
 
 ## Banco de Dados
 
