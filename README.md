@@ -16,3 +16,5 @@
 ## Banco de Dados
 
 ## Tecnologias Usadas
+
+[Java](https://www.java.com/pt-BR/) / [Spring](https://spring.io/projects/spring-boot) / [Docker](https://www.docker.com/) / [PostgresSQL](https://www.postgresql.org/) 
