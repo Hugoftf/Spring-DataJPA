@@ -11,7 +11,7 @@
 
 ## Sobre
 
- Um programa para exemplificar e estudar o acesso a dados com Spring JPA utilizando docker para rodar uma imagem de um banco de dados postgresSQL.
+ Um programa para exemplificar e estudar o acesso a dados com Spring JPA utilizando docker para rodar uma imagem de um banco de dados postgresSQL. Conhecimento retirado do curso [spring boot expert](https://www.udemy.com/course/spring-boot-expert/?couponCode=ST4MT240225A)
 
 
 ## Inicio
