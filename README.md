@@ -118,6 +118,11 @@ Ele também recebe a anotação @Enumerated, é usada para especificar como um c
 
 Na camada repositorio, no jpa, normalmente é usado interface como base, ela serve para herda outra interface presente no [starter data jpa](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa), essa interface é um conjunto de outras interfaces e anotações, que herda metodos e funcionalidades (Como exemplo os metodos crud (já com a lógica) para realizar operações no banco de dados), essas interface depende de dois tipos genéricos que serão importate para realizar operações futuras, no caso ela quer saber qual é classe que será a entidade do meu programa e o tipo da minha chave primaria, no caso as classes são Autor e Livro, e o tipo da chave primaria é a classe que carrega anotação @ID, no caso UUID.
 
+stater data jpa:
+
+![imagem Local](imagem_readme/classes/starter_jpa.png)
+
+
 Autor repository:
 
 ![imagem Local](imagem_readme/classes/interface_autorrepository.png)
@@ -131,7 +136,7 @@ Livro repository:
 
 No Spring, por padrão, quando o projeto é criado já é inserido a dependencia [starter test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test), básicamente ela serve para realizar teste através de metodos com nossas entidades e repositorios mocados. (Não irei comentar a lógica no tópico, é uma lógica básica de cruds, somente o comportamento e as anotações)
 
-img stater teste
+![imagem Local](imagem_readme/classe_applicationTest/starter_teste.png)
 
 Como boa prática é indicado criar pacote para separar a lógica do teste para cada entidade e repositorio:
 
