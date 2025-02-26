@@ -129,7 +129,9 @@ Livro repository:
 
 ## Classe e Metodos Teste
 
-No Spring, por padrão, quando o projeto é criado já é inserido a dependencia [starter test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test), básicamente ela serve para realizar teste através de metodos com nossas entidades e repositorios mocados.
+No Spring, por padrão, quando o projeto é criado já é inserido a dependencia [starter test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test), básicamente ela serve para realizar teste através de metodos com nossas entidades e repositorios mocados. (Não irei comentar a lógica no tópico, é uma lógica básica de cruds, somente o comportamento e as anotações)
+
+img stater teste
 
 Como boa prática é indicado criar pacote para separar a lógica do teste para cada entidade e repositorio:
 
@@ -141,6 +143,8 @@ Agora, iremos criar a classe autor teste, para testar a lógica de metodos que i
 
 
 ![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/classe_autorRepositoryTesteTeste.png)
+
+A classe AutorTeste recebe a anotação obrigatória @SpringBootTest para dizer que é uma classe teste, e também criamos um campo para o AutorRepository, com uma anotação @Autowired para realizar a [injeção de dependencia](https://medium.com/@leonardogiuliani/autowired-e-a-inje%C3%A7%C3%A3o-de-depend%C3%AAncia-do-spring-d8864cc9af50).
 
 Metodos cruds criados e implementando a lógica e boas práticas: 
 
@@ -160,6 +164,8 @@ Encontrar todos os autor e contar:
 Deletar por id e deletar autor:
 
 ![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/metodo_deleteAutorPorId_e_deleteAutor.png)
+
+Básicamente foi feito uma lógica em cada metodo para validação e boa prática, para realizar as operações encontradas no campo do AutorRepository, que serve como um intermedio, para realizar operações no banco de dados.
 
 ## Tecnologias Usadas
 
