@@ -136,7 +136,7 @@ Livro repository:
 
 No Spring, por padrão, quando o projeto é criado já é inserido a dependencia [starter test](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test), básicamente ela serve para realizar teste através de metodos com nossas entidades e repositorios mocados. (Não irei comentar a lógica no tópico, é uma lógica básica de cruds, somente o comportamento e as anotações)
 
-![imagem Local](imagem_readme/classe_applicationTest/starter_teste.png)
+![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/starter_teste.png)
 
 Como boa prática é indicado criar pacote para separar a lógica do teste para cada entidade e repositorio:
 
