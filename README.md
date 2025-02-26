@@ -133,7 +133,33 @@ No Spring, por padrão, quando o projeto é criado já é inserido a dependencia
 
 Como boa prática é indicado criar pacote para separar a lógica do teste para cada entidade e repositorio:
 
+
 ![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/criando_pacoteRepositoryTeste_e_classeAutorRepositoryTeste.png)
+
+
+Agora, iremos criar a classe autor teste, para testar a lógica de metodos que iremos implementar no programa:
+
+
+![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/classe_autorRepositoryTesteTeste.png)
+
+Metodos cruds criados e implementando a lógica e boas práticas: 
+
+Salvar: 
+
+![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/metodo_salvarTeste.png)
+
+
+Atualizar: 
+
+![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/metodo_atualizarAutor.png)
+
+Encontrar todos os autor e contar:
+
+![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/metodo_encontrarTodosAutor_e_contagemAutorTeste.png)
+
+Deletar por id e deletar autor:
+
+![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/metodo_deleteAutorPorId_e_deleteAutor.png)
 
 ## Tecnologias Usadas
 
