@@ -4,5 +4,5 @@ public enum GeneroLivro {
     FANTASIA,
     MISTERIO,
     ROMANCE,
-    FICCCAO
+    FICCAO
 }
