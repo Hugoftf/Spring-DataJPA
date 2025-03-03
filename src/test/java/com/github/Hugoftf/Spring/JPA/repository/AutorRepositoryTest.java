@@ -1,13 +1,16 @@
 package com.github.Hugoftf.Spring.JPA.repository;
 
 import com.github.Hugoftf.Spring.JPA.model.Autor;
+import com.github.Hugoftf.Spring.JPA.model.GeneroLivro;
 import com.github.Hugoftf.Spring.JPA.model.Livro;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,6 +19,9 @@ public class AutorRepositoryTest {
 
     @Autowired
     private AutorRepository autorRepository;
+
+    @Autowired
+    private LivroRepository livroRepository;
 
 
     @Test
@@ -94,6 +100,38 @@ public class AutorRepositoryTest {
 
     }
 
+
+    @Test
+    void salvarAutorComLivrosTeste(){
+        Autor autor =  new Autor();
+        autor.setNome("Ygor");
+        autor.setNacionalidade("Argentino");
+        autor.setDataNascimento(LocalDate.of(1997, Month.DECEMBER, 20));
+
+        Livro livro =  new Livro();
+        livro.setIsbn("8888-7777");
+        livro.setTitulo("As torres");
+        livro.setGenero(GeneroLivro.MISTERIO);
+        livro.setDataPublicacao(LocalDate.of(2016, Month.APRIL, 12));
+        livro.setPreco(BigDecimal.valueOf(560));
+        livro.setIdAutor(autor);
+
+        Livro livro2 =  new Livro();
+        livro2.setIsbn("7988-3267");
+        livro2.setTitulo("A mulher");
+        livro2.setGenero(GeneroLivro.ROMANCE);
+        livro2.setDataPublicacao(LocalDate.of(2019, Month.FEBRUARY, 2));
+        livro2.setPreco(BigDecimal.valueOf(160));
+        livro2.setIdAutor(autor);
+
+        autor.setLivros(new ArrayList<>());
+        autor.getLivros().add(livro);
+        autor.getLivros().add(livro2);
+
+        autorRepository.save(autor);
+        livroRepository.saveAll(autor.getLivros());
+
+    }
 
 }
 
