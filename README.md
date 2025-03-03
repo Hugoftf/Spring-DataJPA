@@ -10,6 +10,7 @@
   - [Classes e Metodos Teste](#Classe-e-Metodos-Teste)
   - [Many To One](#Many-To-One)
   - [Query Methods](#Query-Methods)
+  - [JPQL](#JPQL)
   - [Tecnologias Usadas](#Tecnologias-Usadas)
 
 
@@ -273,6 +274,38 @@ Na prática, quando você vai usar sua classe de repository elas vão aparecer:
 
 
 ![imagem local](imagem_readme/query_methods/query_livro_prática.png)
+
+## JPQL
+
+"É uma linguagem de consulta baseada em objetos, usada para consultar entidades em um banco de dados em aplicações Java, particularmente quando se utiliza a JPA (Java Persistence API). JPQL permite criar consultas que são abstraídas do banco de dados relacional e operam diretamente sobre as entidades do modelo de dados da aplicação. No Spring, JPQL é comumente usado junto com o Spring Data JPA, que fornece uma abstração sobre a JPA, facilitando a manipulação de dados de um banco relacional de forma orientada a objetos. " 
+
+Um exemplo no programa: 
+
+![imagem Local](imagem_readme/JPQL/metodo_e_anotacao_query.png)
+
+Ele recebe a anotação @Query em cima do metodo no nosso repository, com uma consulta parecido com SQL.
+
+Metodo Teste:
+
+
+![imagem Local](imagem_readme/JPQL/metodo_e_anotacao_query_resultado.png)
+
+
+Você pode utilizar parametro também, onde você pode utilizar o @Param para identificar o parametro, ou usar posicional:
+
+
+![imagem Local](imagem_readme/JPQL/metodo_e_anotacao_query_com_parametropng.png)
+
+
+Posicional:
+
+![imagem Local](imagem_readme/JPQL/metodo_e_anotacao_query_com_parametro2.png)
+
+
+Metodo Teste:
+
+
+![imagem Local](imagem_readme/JPQL/metodo_e_anotacao_query_com_parametro_resultado.png)
 
 
 ## Tecnologias Usadas
