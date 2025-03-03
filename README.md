@@ -8,7 +8,7 @@
   - [Banco de dados](#Banco-de-Dados)
   - [Mapeando com JPA](#Mapeando-Com-JPA)
   - [Classes e Metodos Teste](#Classe-e-Metodos-Teste)
-  - [Many To One e One To Many](#Many-To-One)
+  - [Many To One](#Many-To-One)
   - [Tecnologias Usadas](#Tecnologias-Usadas)
 
 
@@ -256,8 +256,6 @@ Resultado:
 
 
 Como pode vê, o hibernate fez duas buscas no banco de dados, nesse caso as buscar serão feita se o metodo precisar carregar os dados em que o metodo requere.
-
-### One To Many
 
 
 
