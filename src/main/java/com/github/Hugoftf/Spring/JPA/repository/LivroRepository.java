@@ -1,8 +1,11 @@
 package com.github.Hugoftf.Spring.JPA.repository;
 
 import com.github.Hugoftf.Spring.JPA.model.Autor;
+import com.github.Hugoftf.Spring.JPA.model.GeneroLivro;
 import com.github.Hugoftf.Spring.JPA.model.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,6 +27,18 @@ public interface LivroRepository extends JpaRepository<Livro, UUID> {
     // Encontrar livros entre datas de publicações
     List<Livro> findByDataPublicacaoBetween(LocalDate inicio, LocalDate fim);
 
+    //JPQL
 
+    @Query(" select l from Livro as l order by l.titulo, l.preco" )
+    List<Livro> listarTodosOrdenadosPorTituloEPreco();
+
+
+    @Query("select l from Livro as l where l.genero = :nomeDoParametro order by :nomeDaOrdenacao")
+    List<Livro> findByGenero(@Param("nomeDoParametro") GeneroLivro generoLivro
+            ,@Param("nomeDaOrdenacao") String nome);
+
+
+    @Query("select l from Livro as l where l.genero = ?1 order by ?2")
+    List<Livro> findByGeneroPositional(GeneroLivro generoLivro, String nomePropriedade);
 
 }

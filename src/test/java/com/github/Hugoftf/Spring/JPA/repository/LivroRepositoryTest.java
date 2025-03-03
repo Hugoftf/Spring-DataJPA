@@ -68,8 +68,24 @@ class LivroRepositoryTest {
 
         System.out.println("Autor:");
         System.out.println(livro.getIdAutor().getNome());
-        
 
+
+    }
+
+    @Test
+    void buscarPorTituloEPreco(){
+        var livrosEncontrados =
+                livroRepository.listarTodosOrdenadosPorTituloEPreco();
+
+        livrosEncontrados.forEach(System.out::println);
+    }
+
+    @Test
+    void listarPorGeneroQueryParamTeste(){
+        var livrosEncontrados =
+                livroRepository.findByGenero(GeneroLivro.ROMANCE, "dataPublicacao");
+
+        livrosEncontrados.forEach(System.out::println);
     }
 
 }
