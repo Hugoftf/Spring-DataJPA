@@ -8,6 +8,7 @@
   - [Banco de dados](#Banco-de-Dados)
   - [Mapeando com JPA](#Mapeando-Com-JPA)
   - [Classes e Metodos Teste](#Classe-e-Metodos-Teste)
+  - [Many To One e One To Many](#Many-To-One)
   - [Tecnologias Usadas](#Tecnologias-Usadas)
 
 
@@ -206,6 +207,59 @@ Depois de testar o metodo:
 
 
 ![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/select_livro_e_autor_atualizado.png)
+
+
+## Many To One
+
+"O Many-to-One  é um tipo de relacionamento entre duas entidades onde muitos registros de uma entidade  estão associados a um único registro de outra entidade." No exemplo desse programa, o many to one está associada a coluna id autor da tabela livro, onde tem o relacionamento de muitos livros para um autor, em lógica, o sistema deve precisar de algum metodo para buscar esse padrão de muitos livros para um autor. Porém o importante na implementação é saber que tipo de carregamento que o sistema precisa, pode ser custoso para o desenpenho ou trazer exesso de informação, para isso existe a estratégia de fetch.
+
+"No contexto do Spring Data JPA e do relacionamento entre entidades, a estratégia de fetch define como os dados relacionados (de outras entidades) são carregados quando uma entidade é consultada no banco de dados. Quando você tem um relacionamento ManyToOne ou OneToMany, o fetch controla a forma como as entidades associadas são recuperadas."
+
+Exemplo, implementamos nosso método de buscar livro e autor:
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/metodo_buscar_livro_e_autor.png)
+
+
+Um metodo com retorno no console da nosso back-end, ele pode servi para apenas recuperar informações do banco de dados, como para lógica para outros métodos e muitas outras coisas.
+
+resultado comum dessa operação:
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/metodo_buscar_livro_e_autor_resultado.png)
+
+
+Vamos dizer agora, que eu não quero carrega junto o autor, somente o livro, na lógica teriamos que comentar as linhas do autor:
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/parametro_fetch_many_to_one_comentado.png)
+
+
+Não é uma boa prática. Existe um parametro no relacionamento many to one chamado fetch:
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/parametro_fetch_many_to_one.png)
+
+
+Ele tem dois tipos, o eager e lazy. " Lazy Fetch (Carregamento preguiçoso): Nesse tipo de estratégia, os dados da entidade associada não são carregados até que sejam realmente necessários. Ou seja, o JPA só consulta o banco para trazer as entidades associadas quando você acessar explicitamente os dados dessas entidades. Eager Fetch (Carregamento ansioso): Com essa estratégia, os dados das entidades associadas são carregados imediatamente, junto com a consulta inicial, sem a necessidade de uma consulta adicional ao banco de dados."
+
+Podemos usar o lazy para filtrar e evitar exesso de informações. Nesse caso agora, precisamos usar também a anotação @Transactional (Quando você marca um método ou uma classe com @Transactional, o Spring automaticamente inicia uma transação quando o método é chamado e a finaliza ao término da execução do método. Caso ocorra algum erro ou exceção dentro do método, a transação é revertida (rollback), garantindo que o banco de dados não fique em um estado inconsistente) no metodo buscarLivrosEAutor:
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/parametro_fetch_many_to_one_transaction.png)
+
+
+Resultado: 
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/parametro_fetch_many_to_one_transaction_resultado.png)
+
+
+Como pode vê, o hibernate fez duas buscas no banco de dados, nesse caso as buscar serão feita se o metodo precisar carregar os dados em que o metodo requere.
+
+### One To Many
+
+
 
 
 ## Tecnologias Usadas
