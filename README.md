@@ -144,7 +144,9 @@ Como boa prática é indicado criar pacote para separar a lógica do teste para 
 ![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/criando_pacoteRepositoryTeste_e_classeAutorRepositoryTeste.png)
 
 
-Agora, iremos criar a classe autor teste, para testar a lógica de metodos que iremos implementar no programa:
+Agora, iremos criar a classe autor teste, para testar a lógica de metodos que iremos implementar no programa.
+
+#### Autor Repository Teste
 
 
 ![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/classe_autorRepositoryTesteTeste.png)
@@ -171,6 +173,40 @@ Deletar por id e deletar autor:
 ![imagem Local](imagem_readme/classe_applicationTest/autorRepositoryTeste/metodo_deleteAutorPorId_e_deleteAutor.png)
 
 Básicamente foi feito uma lógica em cada metodo para validação e boa prática, para realizar as operações encontradas no campo do AutorRepository, que serve como um intermedio, para realizar operações no banco de dados.
+
+#### Livro Repository Teste
+
+Agora vamos a implementação da classe Livro repository teste. A implementação dos metodos não é muito diferente, o que muda é a lógica.
+
+A classe teste:
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/classe_livroRepositoryTeste.png)
+
+Crud salvar:
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/crud_salvar.png)
+
+Resultado no banco de dados:
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/resultado_salvar.png)
+
+Crud autualizar autor:
+
+Monstrando novas pespectivas do que pode ser feito além do crud padrão, como já foi mostrado na classe autor o padrão, agora, podemos implementar lógicas do sistema que podem acontecer:
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/crud_atualizar_autor.png)
+
+Como está no banco de dados:
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/select_livro_e_autor.png)
+
+
+Depois de testar o metodo:
+
+
+![imagem local](imagem_readme/classe_applicationTest/livroRepositoryTeste/select_livro_e_autor_atualizado.png)
+
 
 ## Tecnologias Usadas
 
