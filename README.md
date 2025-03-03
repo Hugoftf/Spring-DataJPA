@@ -258,12 +258,12 @@ Resultado:
 
 Como pode vê, o hibernate fez duas buscas no banco de dados, nesse caso as buscar serão feita se o metodo precisar carregar os dados em que o metodo requere.
 
-## JPA Query Methods
+## Query Methods
 
 Eles são parte do Spring Data JPA, uma extensão do Spring Data que simplifica o uso de JPA (Java Persistence API) e permite a criação de repositórios de acesso a dados. Com JPA Query Methods, você pode criar consultas de maneira declarativa usando convenções de nomenclatura, o que faz com que o Spring Data JPA gere automaticamente as consultas correspondentes.
 
 
-![imagem local](imagem_readme/classe_applicationTest/query_methods/query_livro.png)
+![imagem local](imagem_readme/query_methods/query_livro.png)
 
 
 Você pode encontrar a lista de todas as Query methods [aqui](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html)
@@ -272,7 +272,7 @@ Você pode encontrar a lista de todas as Query methods [aqui](https://docs.sprin
 Na prática, quando você vai usar sua classe de repository elas vão aparecer:
 
 
-![imagem local](imagem_readme/classe_applicationTest/query_methods/query_livro_prática.png)
+![imagem local](imagem_readme/query_methods/query_livro_prática.png)
 
 
 ## Tecnologias Usadas
